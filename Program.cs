@@ -8,6 +8,7 @@ namespace Heist_2
     {
         static void Main(string[] args)
         {
+            // Create some robbers and add them to the list
             Hacker hacker1 = new Hacker("Allie", 90, 30);
             Hacker hacker2 = new Hacker("Sally", 65, 35);
             Muscle muscle1 = new Muscle("Curtis", 90, 30);
@@ -151,15 +152,6 @@ namespace Heist_2
                 double leadersHaul = cutRemaining * targetBank.CashOnHand / 100;
                 Console.WriteLine($"Your Haul: {leadersHaul}");
             }
-
-
-
-
-
-
-
-
-
 
             
         }
