@@ -1,0 +1,11 @@
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2.deps.json
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2.runtimeconfig.json
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2.runtimeconfig.dev.json
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2.dll
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/bin/Debug/netcoreapp3.0/Heist-2.pdb
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/obj/Debug/netcoreapp3.0/Heist-2.csprojAssemblyReference.cache
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/obj/Debug/netcoreapp3.0/Heist-2.AssemblyInfoInputs.cache
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/obj/Debug/netcoreapp3.0/Heist-2.AssemblyInfo.cs
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/obj/Debug/netcoreapp3.0/Heist-2.dll
+/home/snyderjosephd/nss/workspace/csharp/exercises/Book1/Heist-2/obj/Debug/netcoreapp3.0/Heist-2.pdb
