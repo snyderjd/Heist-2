@@ -8,11 +8,11 @@ namespace Heist_2
     {
         static void Main(string[] args)
         {
-            Hacker hacker1 = new Hacker("Jeff", 68, 39);
+            Hacker hacker1 = new Hacker("Allie", 90, 30);
             Hacker hacker2 = new Hacker("Sally", 65, 35);
-            Muscle muscle1 = new Muscle("Bob", 48, 27);
+            Muscle muscle1 = new Muscle("Curtis", 90, 30);
             Muscle muscle2 = new Muscle("Dan", 72, 41);
-            LockSpecialist lockPicker1 = new LockSpecialist("Sue", 50, 30);
+            LockSpecialist lockPicker1 = new LockSpecialist("Carl", 90, 30);
             LockSpecialist lockPicker2 = new LockSpecialist("Bo", 42, 22);
 
             List<IRobber> rolodex = new List<IRobber>(){
@@ -80,6 +80,10 @@ namespace Heist_2
             Console.WriteLine($"Lease Secure System: {reverseOrdered[0].Key}");
             Console.WriteLine();
 
+            // Create a list to hold the crew
+            List<IRobber> crew = new List<IRobber>();
+
+            // Print out a list of all the operatives
             Console.WriteLine("==== Available Operatives ====");
             for (int i = 0; i < rolodex.Count(); i++)
             {
@@ -88,6 +92,64 @@ namespace Heist_2
                 Console.WriteLine($"Skill Level: {rolodex[i].SkillLevel}");
                 Console.WriteLine($"Cut Required: {rolodex[i].PercentageCut}");
                 Console.WriteLine();
+            }
+
+            // User selects the first operative
+            Console.WriteLine("Enter an index number to select the corresponding operative> ");
+            string userSelection = Console.ReadLine();
+            int cutRemaining = 100;
+
+            while (userSelection != "")
+            {
+                int contactIndex = int.Parse(userSelection);
+                cutRemaining = cutRemaining - rolodex[contactIndex].PercentageCut;
+                crew.Add(rolodex[contactIndex]);
+                Console.WriteLine($"Cut Remaining: {cutRemaining}");
+                Console.WriteLine();
+
+                // Print out a list of all the operatives
+                Console.WriteLine("==== Available Operatives ====");
+                for (int i = 0; i < rolodex.Count(); i++)
+                {
+                    if (cutRemaining >= rolodex[i].PercentageCut && crew.Contains(rolodex[i]) == false)
+                    {
+                        Console.WriteLine($"{i}) {rolodex[i].Name}");
+                        Console.WriteLine($"Specialty: {rolodex[i].Specialty}");
+                        Console.WriteLine($"Skill Level: {rolodex[i].SkillLevel}");
+                        Console.WriteLine($"Cut Required: {rolodex[i].PercentageCut}");
+                        Console.WriteLine();
+                    }
+                    
+                }
+
+                // Select the next operative
+                Console.WriteLine("Enter an index number to select the corresponding operative> ");
+                userSelection = Console.ReadLine();
+            }
+
+            // Begin the heist - each crew member performs their skill on the bank
+            foreach(IRobber robber in crew)
+            {
+                robber.PerformSkill(targetBank);
+            }
+
+            if (targetBank.IsSecure)
+            {
+                Console.WriteLine("Your team failed!");
+            }
+            else 
+            {
+                Console.WriteLine("Success!");
+                Console.WriteLine("===== Final Report =====");
+                Console.WriteLine($"Total Haul: {targetBank.CashOnHand}");
+                foreach(IRobber robber in crew)
+                {
+                    double haul = robber.PercentageCut * targetBank.CashOnHand / 100;
+                    Console.WriteLine($"{robber.Name}: {haul}");
+                }
+
+                double leadersHaul = cutRemaining * targetBank.CashOnHand / 100;
+                Console.WriteLine($"Your Haul: {leadersHaul}");
             }
 
 
